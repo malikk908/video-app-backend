@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
       lowercase: true,
+      trim: true,
     },
     password: {
       type: String,
@@ -32,6 +33,18 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       required: true,
+    },
+    coverImage: {
+      type: String,
+    },
+    watchHistory: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Video",
+      },
+    ],
+    refreshToken: {
+      type: String,
     },
     coverImage: {
       type: String,
