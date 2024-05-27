@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true,
-      unique: true,
+      unique: [true, "Email already exist"],
       lowercase: true,
       trim: true,
       index: true,
@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: [true, "Email already exist"],
       trim: true,
       lowercase: true,
       trim: true,
